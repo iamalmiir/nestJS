@@ -6,8 +6,8 @@ export class AppController {
   constructor(private readonly appService: AppService) {}
 
   @Get()
-  @Header('Content-Type', 'application/json')
+  @Header('Content-Type', 'text/html')
   getHello(): { name: string } {
-    return { name: 'NestJS' };
+    return { name: 'Max' };
   }
 }

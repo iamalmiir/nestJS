@@ -5,12 +5,7 @@ import { AppService } from './app.service';
 import { ProductsModule } from './products/products.module';
 
 @Module({
-  imports: [
-    ProductsModule,
-    MongooseModule.forRoot(
-      'mongodb+srv://iamalmiir:q8jXh7XlmISzvl1c@nestjs.v1egw.mongodb.net/blogmainDB?retryWrites=true&w=majority',
-    ),
-  ],
+  imports: [ProductsModule, MongooseModule.forRoot(process.env.MONGO_URI)],
   controllers: [AppController],
   providers: [AppService],
 })
